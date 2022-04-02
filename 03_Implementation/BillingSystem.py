@@ -35,7 +35,6 @@ class BillingSystem:
         self.root.maxsize(width=900, height=650)
         self.root.minsize(width=1300, height=700)
         self.root.title("Raja Bill project")
-
         # ====================Variables========================#
         self.cus_name = StringVar()
         self.c_phone = StringVar()
@@ -46,7 +45,6 @@ class BillingSystem:
 
         # Setting Value to variable
         self.c_bill_no.set(str(x))
-
         # ===================================
         bg_color = "white"
         fg_color = "black"
@@ -368,8 +366,6 @@ class BillingSystem:
         self.root.destroy()
 
     # Function To Clear All Fields
-
-
 root = Tk()
 obj = BillingSystem(root)
 root.mainloop()
