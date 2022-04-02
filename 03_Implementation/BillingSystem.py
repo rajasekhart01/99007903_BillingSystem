@@ -1,9 +1,31 @@
-# RajaSekhar Thimmarayappagari Created #####
+# ****  RajaSekhar Thimmarayappagari ****
+
 from tkinter import *
 import random
 
-
 class BillingSystem:
+    tea = IntVar()
+    coffee = IntVar()
+    lemon_tea = IntVar()
+    black_coffee = IntVar()
+    milk = IntVar()
+    pani_puri = IntVar()
+    gobi = IntVar()
+    poha = IntVar()
+    pakoda = IntVar()
+    lassi = IntVar()
+    pepsi = IntVar()
+    coke = IntVar()
+    sprite = IntVar()
+    thumsup = IntVar()
+    bindu_zeera = IntVar()
+    total_mc = StringVar()
+    total_chat = StringVar()
+    total_softd = StringVar()
+    tax_mc = StringVar()
+    tax_chat = StringVar()
+    tax_softd = StringVar()
+
     def __init__(self, roo):
         self.total_softd_prices = None
         self.total_chat_prices = None
@@ -24,27 +46,6 @@ class BillingSystem:
 
         # Setting Value to variable
         self.c_bill_no.set(str(x))
-        self.tea = IntVar()
-        self.coffee = IntVar()
-        self.lemon_tea = IntVar()
-        self.black_coffee = IntVar()
-        self.milk = IntVar()
-        self.pani_puri = IntVar()
-        self.gobi = IntVar()
-        self.poha = IntVar()
-        self.pakoda = IntVar()
-        self.lassi = IntVar()
-        self.pepsi = IntVar()
-        self.coke = IntVar()
-        self.sprite = IntVar()
-        self.thumsup = IntVar()
-        self.bindu_zeera = IntVar()
-        self.total_mc = StringVar()
-        self.total_chat = StringVar()
-        self.total_softd = StringVar()
-        self.tax_mc = StringVar()
-        self.tax_chat = StringVar()
-        self.tax_softd = StringVar()
 
         # ===================================
         bg_color = "white"
@@ -198,7 +199,8 @@ class BillingSystem:
         f4.place(x=0, y=560, relwidth=2, height=150)
 
         # **** Total of Main Course  ****
-        cosm_lbl = Label(f4, font=("calibri", 15, "bold"), fg=lbl_color, bg=bg_color, text="Total Main Course")
+        cosm_lbl = Label(f4, font=("calibri", 15, "bold"),
+                         fg=lbl_color, bg=bg_color, text="Total Main Course")
         cosm_lbl.grid(row=0, column=0, padx=10, pady=0)
         cosm_en = Entry(f4, textvariable=self.total_mc)
         cosm_en.grid(row=0, column=1, ipady=2, ipadx=5)
@@ -210,7 +212,8 @@ class BillingSystem:
         chat_en.grid(row=1, column=1, ipady=2, ipadx=5)
 
         # ****  Drinks Total  ****
-        oth_lbl = Label(f4, font=("calibri", 15, "bold"), fg=lbl_color, bg=bg_color, text="Total Drinks")
+        oth_lbl = Label(f4, font=("calibri", 15, "bold"),
+                        fg=lbl_color, bg=bg_color, text="Total Drinks")
         oth_lbl.grid(row=2, column=0, padx=10, pady=5)
         oth_en = Entry(f4, textvariable=self.total_softd)
         oth_en.grid(row=2, column=1, ipady=2, ipadx=5)
@@ -218,25 +221,29 @@ class BillingSystem:
         # ******* Tax Area  *******
 
         # ****  Main Course Tax  ****
-        mainc_lbl = Label(f4, font=("calibri", 15, "bold"), fg=lbl_color, bg=bg_color, text="Main Course Tax")
+        mainc_lbl = Label(f4, font=("calibri", 15, "bold"),
+                          fg=lbl_color, bg=bg_color, text="Main Course Tax")
         mainc_lbl.grid(row=0, column=2, padx=30, pady=0)
         mainc_en = Entry(f4, textvariable=self.tax_mc)
         mainc_en.grid(row=0, column=3, ipady=2, ipadx=5)
 
         # ****  chat Tax  ****
-        chatt_lbl = Label(f4, font=("calibri", 15, "bold"), fg=lbl_color, bg=bg_color, text="Chats Tax")
+        chatt_lbl = Label(f4, font=("calibri", 15, "bold"),
+                          fg=lbl_color, bg=bg_color, text="Chats Tax")
         chatt_lbl.grid(row=1, column=2, padx=30, pady=5)
         chatt_en = Entry(f4, textvariable=self.tax_chat)
         chatt_en.grid(row=1, column=3, ipady=2, ipadx=5)
 
         # ****  Soft Drinks Tax  ****
-        softd_lbl = Label(f4, font=("calibri", 15, "bold"), fg=lbl_color, bg=bg_color, text="Drinks Tax")
+        softd_lbl = Label(f4, font=("calibri", 15, "bold"),
+                          fg=lbl_color, bg=bg_color, text="Drinks Tax")
         softd_lbl.grid(row=2, column=2, padx=10, pady=5)
         softd_en = Entry(f4, textvariable=self.tax_softd)
         softd_en.grid(row=2, column=3, ipady=2, ipadx=5)
 
         # ****   Total   ****
-        total_btn = Button(f4, text="Total", bg="red", fg=fg_color, font=("lucida", 12, "bold"), command=self.total)
+        total_btn = Button(f4, text="Total",
+                           bg="red", fg=fg_color, font=("lucida", 12, "bold"), command=self.total)
         total_btn.grid(row=1, column=4, ipadx=20, padx=30)
 
         # ****  Print Bill  ****
@@ -250,7 +257,8 @@ class BillingSystem:
         delete_btn.grid(row=1, column=6, ipadx=20, padx=30)
 
         # ****  Exit  ****
-        exit_btn = Button(f4, text="Exit", bg="brown", fg=fg_color, font=("lucida", 12, "bold"), command=self.exit)
+        exit_btn = Button(f4, text="Exit", bg="brown",
+                          fg=fg_color, font=("lucida", 12, "bold"), command=self.exit)
         exit_btn.grid(row=1, column=7, ipadx=20)
 
     # ****  Function to define get total prices & Tax ****
@@ -307,41 +315,53 @@ class BillingSystem:
     def bill_area(self):
         self.welcome()
         if self.tea.get() != 0:
-            self.txt.insert(END, f"\nTea         {self.tea.get()}           {self.tea.get() * 20}")
+            self.txt.insert(END, f"\nTea  "
+                                 f"       {self.tea.get()}           {self.tea.get() * 20}")
         if self.coffee.get() != 0:
-            self.txt.insert(END, f"\nCoffee        {self.coffee.get()}           {self.coffee.get() * 20}")
+            self.txt.insert(END, f"\nCoffee "
+                                 f"       {self.coffee.get()}           {self.coffee.get() * 20}")
         if self.lemon_tea.get() != 0:
-            self.txt.insert(END, f"\nLemonTea         {self.lemon_tea.get()}           {self.lemon_tea.get() * 30}")
+            self.txt.insert(END, f"\nLemonTea   "
+                                 f"      {self.lemon_tea.get()}           {self.lemon_tea.get() * 30}")
         if self.black_coffee.get() != 0:
             self.txt.insert(END,
-                            f"\nBlack Coffee        {self.black_coffee.get()}           {self.black_coffee.get() * 50}")
+                            f"\nBlack Coffee  "
+                            f"      {self.black_coffee.get()}           {self.black_coffee.get() * 50}")
         if self.milk.get() != 0:
             self.txt.insert(END, f"\nMilk       {self.milk.get()}           {self.milk.get() * 20}")
         if self.pakoda.get() != 0:
-            self.txt.insert(END, f"\nPakoda             {self.pakoda.get()}           {self.pakoda.get() * 50}")
+            self.txt.insert(END, f"\nPakoda  "
+                                 f"           {self.pakoda.get()}           {self.pakoda.get() * 50}")
         if self.poha.get() != 0:
-            self.txt.insert(END, f"\nPoha          {self.poha.get()}           {self.poha.get() * 40}")
+            self.txt.insert(END, f"\nPoha "
+                                 f"         {self.poha.get()}           {self.poha.get() * 40}")
         if self.gobi.get() != 0:
             self.txt.insert(END, f"\nGobi              {self.gobi.get()}           {self.gobi.get() * 80}")
         if self.pani_puri.get() != 0:
             self.txt.insert(END,
                             f"\nPani_puri              {self.pani_puri.get()}           {self.pani_puri.get() * 50}")
         if self.lassi.get() != 0:
-            self.txt.insert(END, f"\nLassi             {self.lassi.get()}           {self.lassi.get() * 50}")
+            self.txt.insert(END, f"\nLassi  "
+                                 f"           {self.lassi.get()}           {self.lassi.get() * 50}")
         if self.pepsi.get() != 0:
-            self.txt.insert(END, f"\nPepsi             {self.pepsi.get()}           {self.pepsi.get() * 30}")
+            self.txt.insert(END, f"\nPepsi "
+                                 f"            {self.pepsi.get()}           {self.pepsi.get() * 30}")
         if self.sprite.get() != 0:
-            self.txt.insert(END, f"\nSprite            {self.sprite.get()}           {self.sprite.get() * 40}")
+            self.txt.insert(END, f"\nSprite  "
+                                 f"          {self.sprite.get()}           {self.sprite.get() * 40}")
         if self.coke.get() != 0:
-            self.txt.insert(END, f"\nCoke              {self.coke.get()}           {self.coke.get() * 40}")
+            self.txt.insert(END, f"\nCoke       "
+                                 f"       {self.coke.get()}           {self.coke.get() * 40}")
         if self.thumsup.get() != 0:
-            self.txt.insert(END, f"\nThumsup             {self.thumsup.get()}           {self.thumsup.get() * 40}")
+            self.txt.insert(END, f"\nThumsup             {self.thumsup.get()}  "
+                                 f"         {self.thumsup.get() * 40}")
         if self.bindu_zeera.get() != 0:
             self.txt.insert(END,
                             f"\nBindu_zeera          {self.bindu_zeera.get()}           {self.bindu_zeera.get() * 30}")
         self.txt.insert(END, "\n===================================")
         self.txt.insert(END,
-                        f"\n  Total : {self.total_mc_prices + self.total_chat_prices + self.total_softd_prices + self.total_mc_prices * 0.01 + self.total_chat_prices * 0.01 + self.total_softd_prices * 0.018}")
+                        f"\n  Total :"
+                        f" {self.total_mc_prices + self.total_chat_prices + self.total_softd_prices + self.total_mc_prices * 0.01 + self.total_chat_prices * 0.01 + self.total_softd_prices * 0.018}")
 
     # Function to exit
     def exit(self):
